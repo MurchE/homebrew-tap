@@ -2,7 +2,7 @@ class Heyclaude < Formula
   desc "Ask a quick question, get a quick answer without leaving your terminal"
   homepage "https://github.com/MurchE/HeyClaude"
   url "https://github.com/MurchE/HeyClaude/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "e3c0b5760f18c4fc36a4fdeec4909e20dd365dae58efd475c2eb372794c95505"
   license "MIT"
 
   depends_on "jq"
