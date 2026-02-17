@@ -2,7 +2,7 @@ class Heyclaude < Formula
   desc "Terminal interface to Claude AI (Anthropic)"
   homepage "https://github.com/MurchE/HeyClaude"
   url "https://github.com/MurchE/HeyClaude/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "" # We'll fill this after creating the release
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
 
   depends_on "jq"
