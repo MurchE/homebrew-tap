@@ -1,6 +1,6 @@
 cask "naggler" do
   version "1.7.0"
-  sha256 "0a3d489e46adaa5ba254b2af0f2db12c81266e8475258de31870c4ae35f00c12"
+  sha256 "9e2eb1b11519812d248d2a9cb578633103440646c29f20bdc8923c69db87f322"
 
   url "https://github.com/MurchE/naggler/releases/download/v#{version}/Naggler-v#{version}-macOS.dmg"
   name "Naggler"
