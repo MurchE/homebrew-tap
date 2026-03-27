@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tap this repository
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/murche"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/murche/homebrew-tap"
+
+      - name: Audit heyclaude formula
+        run: brew audit --strict Formula/heyclaude.rb
+
+      - name: Audit naggler cask
+        run: brew audit --cask Casks/naggler.rb
+
+  test:
+    runs-on: macos-latest
+    needs: audit
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tap this repository
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/murche"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/murche/homebrew-tap"
+
+      - name: Install heyclaude
+        run: brew install murche/tap/heyclaude
+
+      - name: Test heyclaude
+        run: brew test heyclaude
